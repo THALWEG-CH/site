@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thalweg — Écologie aquatique &amp; écohydraulique</title>
+<meta name="description" content="Thalweg est un bureau de conseil indépendant en écologie aquatique et écohydraulique : assainissement de la force hydraulique, renouvellement de concession, suivi des effets, données (analyse, automatisation, synthèses de littérature), conciliation des intérêts, formation — et relecture de dossiers.">
+<link rel="icon" type="image/png" href="embleme.png">
+<link rel="canonical" href="https://thalweg.ch/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thalweg.ch/">
+<meta property="og:title" content="Thalweg — Écologie aquatique &amp; écohydraulique">
+<meta property="og:description" content="Bureau de conseil indépendant, spécialisé dans le rétablissement de la migration piscicole — de l'avis d'expert au pilotage de projet.">
+<meta property="og:image" content="https://thalweg.ch/logo-horizontal.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-header:#ffffff;
+    --navy:#001b43;
+    --river:#0189b6;
+    --river-deep:#01678c;
+    --river-light:#7fc6dd;
+    --mist:#f0f5f8;
+    --ink:#26313f;
+    --grey:#5c6b7a;
+    --rule:#dde5ea;
+    --lang-off:#b3bfca;
+    --link:#01678c;
+    color-scheme: light dark;
+  }
+  /*AUTO-DARK*/@media (prefers-color-scheme: dark){
+    html:not(.theme-light){--bg:#0a1724;--bg-header:#0a1724;--navy:#f4f8fb;--mist:#101f30;--ink:#e6edf3;--grey:#b6c6d3;--rule:#23394d;--lang-off:#4e6478;--link:#7ecbe8;--river-deep:#3aa8d0;color-scheme:dark}
+    html:not(.theme-light) .valley,html:not(.theme-light) .fish,html:not(.theme-light) .illustration{filter:brightness(1.45) saturate(1.05)}
+    html:not(.theme-light) .portrait{border-color:#2c445b}
+    html:not(.theme-light) .logo-light{display:none}
+    html:not(.theme-light) .logo-dark{display:block}
+    html:not(.theme-light) .icon-moon{display:none}
+    html:not(.theme-light) .icon-sun{display:inline}
+  }
+  /*FORCE-DARK*/@media all{
+    html.theme-dark{--bg:#0a1724;--bg-header:#0a1724;--navy:#f4f8fb;--mist:#101f30;--ink:#e6edf3;--grey:#b6c6d3;--rule:#23394d;--lang-off:#4e6478;--link:#7ecbe8;--river-deep:#3aa8d0;color-scheme:dark}
+    html.theme-dark .valley,html.theme-dark .fish,html.theme-dark .illustration{filter:brightness(1.45) saturate(1.05)}
+    html.theme-dark .portrait{border-color:#2c445b}
+    html.theme-dark .logo-light{display:none}
+    html.theme-dark .logo-dark{display:block}
+    html.theme-dark .icon-moon{display:none}
+    html.theme-dark .icon-sun{display:inline}
+  }
+  .logo-dark{display:none}
+  .icon-sun{display:none}
+  .mode-btn{background:none;border:1px solid var(--rule);border-radius:50%;width:34px;height:34px;
+    display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;
+    margin-left:.7rem;cursor:pointer;color:var(--navy);padding:0}
+  .mode-btn:hover{border-color:var(--river)}
+  
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;background:#fff;background:var(--bg)}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:#fff;background:var(--bg);color:var(--ink);
+    font-family:"Source Serif 4", Georgia, serif;
+    font-size:1.05rem;line-height:1.68;
+  }
+  h1,h2,h3{font-family:"Montserrat","Helvetica Neue",sans-serif;font-weight:300;color:var(--navy)}
+  a{color:var(--link)}
+  a:focus-visible{outline:2px solid var(--river);outline-offset:3px}
+  .page{background:#fff;background:var(--bg);min-height:100vh}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 1.5rem}
+
+  /* ---------- header ---------- */
+  header{background:var(--bg-header);border-bottom:1px solid var(--rule)}
+  .header-bar{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  .brand img{height:64px;width:auto;display:block}
+  .lang{font-family:"Montserrat",sans-serif;font-size:.8rem;letter-spacing:.08em}
+  .lang a{color:var(--navy);text-decoration:none;font-weight:600;padding:.3rem .35rem}
+  .lang span{color:var(--lang-off);padding:.3rem .35rem;cursor:default}
+
+  /* ---------- hero ---------- */
+  .hero{padding:4.6rem 0 0;text-align:left}
+  .definition{font-style:italic;color:var(--grey);max-width:34em;font-size:1.05rem}
+  .definition b{font-style:normal;font-weight:600;color:var(--navy)}
+  .def-source{display:block;margin-top:.35rem;font-size:.82rem;font-style:normal;
+    font-family:"Montserrat",sans-serif;letter-spacing:.06em;color:var(--grey)}
+  .def-source::before{content:"— "}
+  .epigraph{font-style:italic;color:var(--grey);font-size:.95rem;max-width:38em;margin-bottom:1.1rem}
+  .epigraph b{font-style:normal;font-weight:600;color:var(--navy)}
+  .epigraph .src{font-style:normal;font-size:.85em;color:var(--grey)}
+  .mirror{max-width:38em;font-size:1.18rem;color:var(--navy);margin-bottom:1.4rem}
+  .hero h1{margin:0 0 1.2rem;font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.2}
+  .hero p.lead{max-width:36em;font-size:1.13rem}
+  .cta{
+    display:inline-block;margin-top:2rem;
+    font-family:"Montserrat",sans-serif;font-weight:600;font-size:.93rem;letter-spacing:.05em;
+    text-decoration:none;color:#fff;
+    background:linear-gradient(100deg,var(--river) 0%,var(--river-deep) 100%);
+    padding:.9rem 1.7rem;border-radius:3px;
+  }
+  .cta:hover{background:linear-gradient(100deg,#12a0cc 0%,#027ba6 100%)}
+
+  /* profil en travers de vallée */
+  .valley{display:block;width:100%;height:auto;margin-top:3.2rem}
+
+  /* ---------- sections ---------- */
+  section{padding:4.4rem 0}
+  section h2{font-size:1.9rem;margin-bottom:.9rem}
+  .h2-bar{
+    width:56px;height:4px;border-radius:2px;margin-bottom:2.4rem;
+    background:linear-gradient(90deg,var(--river),var(--river-light));
+  }
+  .band{background:var(--mist)}
+  .illustration{display:block;width:100%;height:auto;margin:0 0 1rem}
+  .approche-grid{display:grid;grid-template-columns:1fr 330px;gap:3rem;align-items:center}
+  .fish{width:100%;height:auto;display:block}
+  @media (max-width:820px){.approche-grid{grid-template-columns:1fr}.fish{max-width:320px;margin:0 auto}}
+
+  /* compétences */
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem 3.2rem}
+  .comp{border-left:3px solid;border-image:linear-gradient(180deg,var(--river),var(--river-light)) 1;padding-left:1.3rem}
+  .comp h3{font-weight:500;font-size:1.1rem;margin-bottom:.55rem;line-height:1.4}
+  .open-note{margin-top:2.6rem;max-width:44em;font-size:1.08rem}
+  .open-note em{color:var(--river-deep)}
+  .relecture{margin-top:3.4rem;border:1px solid var(--rule);border-left:4px solid var(--river);
+    padding:1.7rem 2rem;border-radius:3px}
+  .relecture h3{font-weight:500;font-size:1.15rem;margin-bottom:.6rem;line-height:1.4}
+  .relecture p{max-width:52em}
+  .relecture .fine{margin-top:.9rem;color:var(--grey);font-size:.98rem}
+  @media (max-width:760px){.comp-grid{grid-template-columns:1fr}}
+
+  /* approche + à propos */
+  .prose{max-width:42em}
+  .prose p + p{margin-top:1rem}
+  .about-grid{display:grid;grid-template-columns:200px 1fr;gap:2.8rem;align-items:start}
+  .portrait{width:200px;height:auto;display:block;border:1px solid var(--rule)}
+  @media (max-width:640px){.about-grid{grid-template-columns:1fr}.portrait{width:180px}}
+
+  /* contact */
+  .contact p{max-width:36em}
+  .contact-line{margin-top:1.3rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:1.05rem}
+  .contact-line a{text-decoration:none;border-bottom:1px solid var(--river)}
+
+  footer{
+    border-top:1px solid var(--rule);
+    padding:2rem 0 2.6rem;color:var(--grey);
+    font-size:.85rem;font-family:"Montserrat",sans-serif;letter-spacing:.03em;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between}
+</style>
+<!--THEME-JS--><script>
+(function(){try{var t=localStorage.getItem('thalweg-theme');
+if(t==='dark'||t==='light')document.documentElement.classList.add('theme-'+t);}catch(e){}})();
+</script><!--/THEME-JS-->
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="wrap header-bar">
+    <a class="brand" href="#top" aria-label="Thalweg — accueil">
+      <img class="logo-light" src="logo-horizontal.png" alt="Thalweg">
+        <img class="logo-dark" src="logo-blanc.webp" alt="Thalweg">
+    </a>
+    <nav class="lang" aria-label="Langues">
+      <a href="index.html" aria-current="page">FR</a>
+      <span title="Bientôt disponible">DE</span>
+      <span title="Bientôt disponible">EN</span><!--THEME-BTN--><button class="mode-btn" id="modeBtn" aria-label="Basculer entre mode clair et sombre" title="Clair / sombre">
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button><!--/THEME-BTN-->
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero wrap">
+    
+    <h1>Écologie aquatique &amp;&nbsp;écohydraulique</h1>
+
+    <p class="lead">Thalweg est un bureau de conseil indépendant en écologie aquatique,
+    spécialisé dans le rétablissement de la migration piscicole. Au service des autorités,
+    des exploitants hydroélectriques, des bureaux d'études et des ONG — de l'avis
+    d'expert au pilotage de projet, en français, en allemand et en anglais.</p>
+
+    <a class="cta" data-u="info" data-d="thalweg" data-t="ch" href="#contact">Prendre contact</a>
+
+    <img class="valley" src="valley.png" alt="Paysage en fil de fer : une rivière et ses affluents convergent le long du thalweg" loading="lazy">
+  </div>
+
+  <section class="band" id="approche">
+    <div class="wrap approche-grid">
+    <div class="prose">
+      <h2>Approche</h2>
+      <div class="h2-bar" role="presentation"></div>
+      <p class="epigraph"><b>Thalweg</b>, n.&nbsp;m. — de l'allemand <i>Thal</i>, «&nbsp;vallée&nbsp;», et <i>Weg</i>, «&nbsp;chemin&nbsp;»&nbsp;: ligne joignant les points les plus bas d'une vallée <span class="src">(Larousse)</span></p>
+      <p class="mirror">Un thalweg, c'est là où les eaux convergent naturellement.
+      Chez Thalweg, ce sont les compétences qui convergent — en direction de la
+      solution qui s'impose naturellement.</p>
+      <p>La loi fixe des objectifs — assainir, renaturer, protéger. Les atteindre demande
+      trois choses&nbsp;: comprendre les poissons, connaître les solutions envisageables —
+      leurs forces, leurs limites, leurs coûts — et maîtriser le cadre légal et
+      procédural. Thalweg réunit ces trois regards, et sait où trouver les compétences
+      qui les complètent — pour offrir à chaque projet les meilleures chances de
+      fonctionner.</p>
+      <p>Le bureau intervient en expert ponctuel, en relecture ou en assistance à
+      maîtrise d'ouvrage (AMO) — seul ou en consortium, selon la forme que demande le
+      mandat.</p>
+    </div>
+    <img class="fish" src="truite.png" alt="Truite en fil de fer franchissant la surface" loading="lazy">
+    </div>
+  </section>
+
+  <section id="prestations">
+    <div class="wrap">
+      <h2>Prestations</h2>
+      <div class="h2-bar" role="presentation"></div>
+
+      <div class="comp-grid">
+        <div class="comp">
+          <h3>Assainissement de la force hydraulique</h3>
+          <p>Analyse des déficits, études de variantes, conduite des procédures
+          d'assainissement, coordination des domaines d'assainissement (migration,
+          charriage, éclusées, débits résiduels), financement des mesures et suivi des
+          effets — de l'expertise ponctuelle à la prise en charge complète du dossier.</p>
+        </div>
+
+        <div class="comp">
+          <h3>Renouvellement de concession</h3>
+          <p>Conduite de l'ensemble de la procédure ou appui ponctuel, vérification de la
+          conformité réglementaire à chaque étape — un dossier cohérent sur les volets
+          administratifs, piscicoles et financiers.</p>
+        </div>
+
+        <div class="comp">
+          <h3>Suivi des effets</h3>
+          <p>Des exigences précises dans un contexte précis&nbsp;: concept de suivi,
+          dimensionnement statistique, analyse des données — jusqu'au rapport
+          d'efficacité.</p>
+        </div>
+
+        <div class="comp">
+          <h3>Données&nbsp;: analyse, automatisation, synthèses de littérature</h3>
+          <p>Analyser un jeu de données existant&nbsp;; automatiser la gestion et les
+          analyses de données récurrentes avec un outil sur mesure&nbsp;; conduire un
+          projet de recherche — comportement, mouvements, dynamique des populations.</p>
+        </div>
+
+        <div class="comp">
+          <h3>Conciliation des intérêts</h3>
+          <p>Patrimoine, agriculture, riverains, acceptation par les ONG et le
+          public&nbsp;: identifier les points de blocage entre intérêts divergents et
+          proposer des solutions concrètes.</p>
+        </div>
+
+        <div class="comp">
+          <h3>Formation &amp; vulgarisation</h3>
+          <p>Cours pour les professionnels, vulgarisation pour les porteurs de projets,
+          conférences&nbsp;: adapter le niveau de complexité au public visé et faire
+          passer les éléments clés.</p>
+        </div>
+      </div>
+
+      <div class="relecture">
+        <h3>Relecture de dossiers</h3>
+        <p>Un regard indépendant avant d'engager la suite&nbsp;: un maître d'ouvrage veut
+        s'assurer de la solidité d'un rapport qu'il a reçu&nbsp;; un bureau veut vérifier
+        que son dossier tient la route avant de le déposer. Thalweg livre une note de
+        relecture structurée — conformité aux exigences légales et aux standards en
+        vigueur, solidité technique, points à corriger, priorités — nourrie par
+        l'expérience de l'examen des dossiers. Pour sécuriser le projet
+        et gagner du temps.</p>
+        <p class="fine">Selon le besoin&nbsp;: relecture seule, avec séance de restitution,
+        ou accompagnement jusqu'au dépôt. Effort proportionné au dossier — quelques jours
+        plutôt que quelques mois&nbsp;; devis après un premier échange.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="wrap">
+    <img class="illustration" src="centrale.png"
+         alt="Illustration en fil de fer : une truite sous la surface, devant une centrale hydroélectrique et sa passe à poissons"
+         loading="lazy">
+  </div>
+
+  
+
+  <section id="apropos">
+    <div class="wrap">
+      <h2>À propos</h2>
+      <div class="h2-bar" role="presentation"></div>
+      <div class="about-grid">
+        <img class="portrait" src="portrait-simon.jpg" alt="Simon Gingins">
+        <div class="prose">
+          <p><strong>Simon Gingins</strong>, biologiste, docteur ès sciences en comportement
+          animal (Université de Neuchâtel). Après un postdoctorat au Max Planck Institute of
+          Animal Behavior et à l'Université de Constance, consacré au comportement
+          collectif des poissons et à leur suivi vidéo en 3D, j'ai passé sept ans dans
+          l'assainissement de la force hydraulique — d'abord au canton de Fribourg, puis à
+          l'Office fédéral de l'environnement (OFEV) comme spécialiste de la migration piscicole et
+          du financement des mesures.</p>
+          <p>De dix ans de recherche — et d'une quinzaine de
+          <a href="https://scholar.google.com/citations?user=ftbIVnAAAAAJ&amp;hl=fr" rel="me">publications</a> —
+          je garde la
+          conduite de projets scientifiques et un réflexe&nbsp;: choisir la
+          méthode qui répondra réellement à la question posée, avec les données pour
+          arbitre. À l'OFEV, j'ai examiné des projets d'assainissement de toute
+          la Suisse — leur planification, leurs points forts, leurs faiblesses — en
+          gardant un lien constant avec la recherche et les mesures techniques
+          émergentes.</p>
+          <p>Je fonde Thalweg en 2027 pour mettre cette vue d'ensemble au service de ceux
+          qui en ont besoin — et remettre la biologie au centre des projets, là où se
+          joue, in fine, leur réussite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <div class="h2-bar" role="presentation"></div>
+      <p>Un projet, une question d'assainissement, un suivi à concevoir&nbsp;?
+      Écrivez-moi — je réponds volontiers, sans engagement.</p>
+      <p class="contact-line"><a data-u="info" data-d="thalweg" data-t="ch" data-show="1" href="#contact">e-mail</a><noscript> : info (at) thalweg (point) ch</noscript></p>
+      <p class="contact-line"><a href="https://www.linkedin.com/company/thalweg" rel="me">LinkedIn</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2027 Thalweg — Simon Gingins</span>
+    <span>Roger-de-Guimps 34 · 1400 Yverdon-les-Bains · Suisse</span>
+  </div>
+</footer>
+
+</div>
+<!--THEME-JS2--><script>
+(function(){
+  var b=document.getElementById('modeBtn'); if(!b)return;
+  var h=document.documentElement;
+  function sys(){return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function eff(){return h.classList.contains('theme-dark')?'dark':h.classList.contains('theme-light')?'light':sys();}
+  b.addEventListener('click',function(){
+    var target = eff()==='dark' ? 'light' : 'dark';
+    h.classList.remove('theme-dark','theme-light');
+    try{
+      if(target===sys()){localStorage.removeItem('thalweg-theme');}
+      else{h.classList.add('theme-'+target);localStorage.setItem('thalweg-theme',target);}
+    }catch(e){h.classList.add('theme-'+target);}
+  });
+})();
+</script><!--/THEME-JS2-->
+<!--MAIL-JS--><script>
+(function(){
+  var list = document.querySelectorAll('a[data-u]');
+  for (var i = 0; i < list.length; i++) {
+    var a = list[i];
+    var addr = a.getAttribute('data-u') + String.fromCharCode(64) + a.getAttribute('data-d') + '.' + a.getAttribute('data-t');
+    a.setAttribute('href', 'mailto:' + addr);
+    if (a.getAttribute('data-show')) { a.textContent = addr; }
+  }
+})();
+</script><!--/MAIL-JS-->
+<!--STATS-JS--><script data-goatcounter="https://thalweg.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script><!--/STATS-JS-->
+</body>
+</html>
