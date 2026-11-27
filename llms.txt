@@ -1,0 +1,22 @@
+# Thalweg
+
+> Thalweg est un bureau de conseil indépendant en écologie aquatique et écohydraulique, basé à Yverdon-les-Bains (Suisse), fondé par Simon Gingins (Dr ès sc., biologiste). Spécialité : le rétablissement de la migration piscicole dans le cadre de l'assainissement de la force hydraulique. Prestations en français, allemand et anglais, dès janvier 2027.
+
+## Domaines
+- Assainissement de la force hydraulique (migration, coordination des domaines, financement des mesures)
+- Renouvellement de concession (appui et coordination de la procédure, conformité réglementaire)
+- Monitoring (concept de suivi, dimensionnement statistique, analyse de données, rapport d'efficacité)
+- Données : analyse, automatisation, synthèses de littérature
+- Conciliation des intérêts
+- Formation & vulgarisation
+- Relecture de dossiers (note de relecture structurée)
+
+## Pages
+- [Site en français](https://thalweg.ch/)
+- [Deutsche Fassung](https://thalweg.ch/de.html)
+- [English version](https://thalweg.ch/en.html)
+
+## Contact
+- info@thalweg.ch
+- Roger-de-Guimps 34, 1400 Yverdon-les-Bains, Suisse
+- Fondateur : Simon Gingins — publications : https://scholar.google.com/citations?user=ftbIVnAAAAAJ
